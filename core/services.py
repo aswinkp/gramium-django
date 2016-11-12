@@ -1,6 +1,5 @@
 def send_message(message):
 	from twilio.rest import TwilioRestClient
-
 	account = "ACfd03a9b8c45fb66bab8b834a21ec578c"
 	token = "aff6d0726a21c044cc3797d9037e9b15"
 	client = TwilioRestClient(account, token)
@@ -9,9 +8,8 @@ def send_message(message):
 	                             body="Hello there!yjgjyl jl klu")
 	
 	message = client.messages.create(to="+918526520700", from_="(347) 380-7554",
-	                             body="Hello there!yjgjyl jl klu")
+	                             body="Hello there! this is soundarya here")
 	print(message.sid)
-
 
 def xls_to_csv():
 	wb = xlrd.open_workbook("/Users/soundaryat/Desktop/Icici 15th repayment.xlsx","r")
