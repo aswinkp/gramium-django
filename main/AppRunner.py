@@ -16,6 +16,7 @@ class AppRunner:
                 "FROM core_member join core_loan where core_member.group_id=core_loan.group_id " \
                 "AND core_loan.is_active=1 " \
                 #"AND DATE_FORMAT(core_loan.date,'%d')=" + current_day
+        date = #update date for installment payment
         mysql_cursor.execute(query)
         client = TwilioClient()
         result = mysql_cursor.fetchall()
@@ -23,7 +24,7 @@ class AppRunner:
             to = '+91' + str(row[0])
             rate_of_interest = str(row[1])
             amount = str(row[2])
-            body = ''
+            body = "கிராமியம் : உங்கள் தவணைத் தொகை   ₹."+ amount + " யை, " + date + "ஆம் தேதிக்குள் செலுத்தவும்"
             client.sendSMS(to=to, from_="(267) 433-0959", body=body)
         return
 
