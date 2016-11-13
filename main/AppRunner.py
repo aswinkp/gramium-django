@@ -23,12 +23,7 @@ class AppRunner:
             to = '+91' + str(row[0])
             rate_of_interest = str(row[1])
             amount = str(row[2])
-            regional_lang_title = "???? ???????????"
-            regional_lang_interest = '??????'
-            regional_lang_amount = '???'
-            body = regional_lang_title + regional_lang_interest + ' : ' + rate_of_interest + regional_lang_amount + ' : ' + amount
-            print body
-            print regional_lang_amount
+            body = ''
             client.sendSMS(to=to, from_="(267) 433-0959", body=body)
         return
 
