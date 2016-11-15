@@ -1,0 +1,4 @@
+django
+twilio
+pyexcel
+MySQL-python
